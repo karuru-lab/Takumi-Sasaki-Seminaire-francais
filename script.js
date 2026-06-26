@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   hamburger.addEventListener('click', function() {
     navMenu.classList.toggle('active');
   });
+});
 
   // メニュー項目クリックで閉じる（スマホ用）
   document.querySelectorAll('.nav-menu a').forEach(link => {
