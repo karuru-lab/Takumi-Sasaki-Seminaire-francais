@@ -1,3 +1,14 @@
+/* style.css の先頭に追加 */
+:root {
+  --navy: #1a237e;
+  --blue: #1565c0;
+  --red: #c62828;
+  --gold: #ffd600;
+  --light-bg: #f8f9fa;
+  --dark-text: #212121;
+  --gray-border: #e0e0e0;
+}
+
 /* 全体のリセットと基本設定 */
 * {
   margin: 0;
@@ -8,8 +19,8 @@
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
-  color: #333;
-  background-color: #f8f4f0; /* クリーム系の背景 */
+  color: var(--dark-text);
+  background-color: var(--light-bg);
 }
 
 /* ヘッダー（ナビゲーション） */
