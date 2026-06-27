@@ -32,11 +32,11 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem; /* 上下の余白を 1rem → 0.5rem に減らす */
 }
 
 .logo img {
-  height: 200px;
+  height: 200px; /* ロゴは大きく */
   width: auto;
 }
 
@@ -221,23 +221,19 @@ header {
 
 /* スマホ対応 */
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
+  .header-container {
+    padding: 0.5rem 1rem; /* スマホではさらに余白を減らす */
+  }
+
+  .logo img {
+    height: 120px; /* スマホでは少し小さめのロゴ */
+    width: auto;
   }
 
   .nav-menu {
-    position: fixed;
-    top: 70px;
-    right: -100%;
-    width: 100%;
-    height: calc(100vh - 70px);
-    background-color: #fff;
-    transition: 0.3s;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 2rem;
+    top: 60px; /* ヘッダーが低くなったので、メニューの開始位置も調整 */
   }
+}
 
   .nav-menu.active {
     right: 0;
