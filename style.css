@@ -188,7 +188,7 @@ header {
 
 /* Aboutセクションだけ上余白を増やす */
 #about {
-  padding-top: 7rem; /* 必要に応じて調整 */
+  padding-top: 7rem;
 }
 
 .section:nth-child(odd) {
@@ -209,7 +209,7 @@ header {
 .section h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #2c3e50;
+  color: var(--navy);
 }
 
 .section p {
@@ -239,7 +239,7 @@ header {
 }
 
 .card h3 {
-  color: #2c3e50;
+  color: var(--navy);
   margin-bottom: 1rem;
   font-size: 1.5rem;
 }
@@ -255,7 +255,7 @@ header {
 }
 
 .values h3 {
-  color: #2c3e50;
+  color: var(--navy);
   margin-bottom: 1rem;
   font-size: 1.5rem;
 }
@@ -268,7 +268,7 @@ header {
   background: #fff;
   margin-bottom: 1rem;
   padding: 1rem;
-  border-left: 4px solid #d4af37; /* ゴールド系 */
+  border-left: 4px solid var(--gold);
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   transition: transform 0.3s;
 }
@@ -278,83 +278,16 @@ header {
 }
 
 .values strong {
-  color: #2c3e50;
+  color: var(--navy);
 }
 
 /* フッター */
 footer {
-  background: #2c3e50;
+  background: var(--navy);
   color: #fff;
   text-align: center;
   padding: 2rem;
 }
-
-/* スマホ用スタイル */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-links {
-    position: fixed;
-    top: 70px;
-    left: -100%;
-    width: 100%;
-    background: #fff;
-    flex-direction: column;
-    text-align: center;
-    transition: 0.3s;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-  }
-
-  .nav-links.active {
-    left: 0;
-  }
-
-  .nav-links li {
-    margin: 1rem 0;
-  }
-
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .hero-content p {
-    font-size: 1rem;
-  }
-
-  .section {
-    padding: 3rem 1rem;
-  }
-
-  .section h2 {
-    font-size: 1.5rem;
-  }
-
-  .section p {
-    font-size: 1rem;
-  }
-
-  .mission-vision {
-    flex-direction: column;
-  }
-
-  .logo span {
-    font-size: 1.2rem;
-  }
-
-  .logo-img {
-    width: 30px;
-    height: 30px;
-  }
-
-  .values li {
-    padding: 0.8rem;
-  }
-}
-}
-
-/* ここから下にタイムラインのスタイルを追加 */
 
 /* ゼミ年代記（タイムライン） */
 .timeline-section {
@@ -451,4 +384,30 @@ footer {
     margin-left: 60px !important;
     margin-right: 0 !important;
   }
+}
+
+/* スマホ全体の調整 */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .section {
+    padding: 3rem 1rem;
+  }
+  .section h2 {
+    font-size: 1.5rem;
+  }
+  .section p {
+    font-size: 1rem;
+  }
+  .mission-vision {
+    flex-direction: column;
+  }
+  .values li {
+    padding: 0.8rem;
+  }
+}
 }
