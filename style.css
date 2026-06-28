@@ -32,11 +32,11 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem; /* 上下の余白を 1rem → 0.5rem に減らす（ヘッダーを低く） */
 }
 
 .logo img {
-  height: 40px;
+  height: 80px; /* ロゴだけ大きく（40px → 80px） */
   width: auto;
 }
 
@@ -271,12 +271,16 @@ header {
   color: #1565c0;
 }
 
-/* スマホ対応（768px以下） */
+/* スマホ対応 */
 @media (max-width: 768px) {
-  /* ヘッダー調整 */
   .header-container {
-    padding: 0.8rem 1rem; /* スマホでは少し余白を減らす */
+    padding: 0.5rem 1rem; /* スマホでも余白を減らす */
   }
+  .logo img {
+    height: 60px; /* スマホでは少し小さめ */
+    width: auto;
+  }
+}
 
   /* ハンバーガーメニュー表示 */
   .hamburger {
