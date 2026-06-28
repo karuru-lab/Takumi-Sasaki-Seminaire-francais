@@ -74,21 +74,61 @@ header {
   color: #c62828; /* フランスの赤 */
 }
 
-/* ヒーローセクション */
-.hero {
+/* Heroセクション（フランス国旗バージョン） */
+.hero.flag-bg {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: #fff;
-  padding: 0 2rem;
+  background: linear-gradient(
+    90deg,
+    #0055A4 0% 33.33%,   /* 青 */
+    #FFFFFF 33.33% 66.66%, /* 白 */
+    #EF4135 66.66% 100%    /* 赤 */
+  );
+  background-size: 300% 100%; /* 横方向に3倍に広げる */
+  animation: flagReveal 1.5s ease forwards;
+  position: relative;
+  color: #212121; /* 基本の文字色（白背景で見やすく） */
+}
+
+/* 背景の色がクロスするアニメーション */
+@keyframes flagReveal {
+  0% {
+    background-position: 150% 0; /* 右端からスタート */
+  }
+  100% {
+    background-position: 0 0; /* 左端に戻る（通常の三分割） */
+  }
+}
+
+/* 白背景の上では文字が読みにくいので、影を付ける */
+.hero.flag-bg .hero-title,
+.hero.flag-bg .hero-subtitle,
+.hero.flag-bg .hero-btn {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* 白背景部分だけ少し暗くするオーバーレイ（任意） */
+.hero.flag-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 33.33%;
+  width: 33.33%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.05); /* 白部分だけほんの少し暗く */
+  pointer-events: none; /* クリックを邪魔しない */
 }
 
 .hero-content {
   max-width: 800px;
+  z-index: 2; /* オーバーレイより上に表示 */
+  position: relative;
 }
 
+/* 既存のHeroタイトル・サブタイトル・ボタンのスタイルはそのまま利用 */
 .hero-title {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
@@ -104,7 +144,7 @@ header {
 
 .hero-line-2 {
   display: block;
-  animation-delay: 0.5s; /* et Moi と同じタイミングで表示 */
+  animation-delay: 0.5s;
 }
 
 @keyframes fadeUp {
@@ -134,7 +174,17 @@ header {
 }
 
 .hero-btn:hover {
-  background-color: #b71c1c; /* 少し暗い赤 */
+  background-color: #b71c1c;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .hero.flag-bg .hero-title {
+    font-size: 2rem;
+  }
+  .hero.flag-bg .hero-subtitle {
+    font-size: 1.1rem;
+  }
 }
 
 /* セクション共通（About us, Our principals, Our professor, Our explore, Entrance exam, Seminar history, Contact us） */
