@@ -83,23 +83,25 @@ header {
   text-align: center;
   background: linear-gradient(
     90deg,
-    #0055A4 0% 33.33%,   /* 青（左） */
-    #FFFFFF 33.33% 66.66%, /* 白（中央） */
-    #EF4135 66.66% 100%    /* 赤（右） */
+    #0055A4 0% 33.33%,   /* 青 */
+    #FFFFFF 33.33% 66.66%, /* 白 */
+    #EF4135 66.66% 100%    /* 赤 */
   );
-  background-size: 300% 100%; /* 横方向に3倍に広げる */
+  background-size: 300% 100%; /* アニメーション中は横3倍 */
+  background-position: 150% 0; /* 右端からスタート */
   animation: flagReveal 1.5s ease forwards;
   position: relative;
-  color: #212121; /* 基本の文字色（白背景で見やすく） */
+  color: #212121;
 }
 
-/* 背景の色が右から左へクロスするアニメーション */
+/* 背景の色が右から左へクロスし、最後に三分割になるアニメーション */
 @keyframes flagReveal {
   0% {
-    background-position: 150% 0; /* 右端からスタート */
+    background-position: 150% 0;
   }
   100% {
-    background-position: 0 0; /* 左端に戻る（青・白・赤の三分割） */
+    background-position: 0 0;
+    background-size: 100% 100%; /* アニメーション終了後は通常サイズに戻す */
   }
 }
 
