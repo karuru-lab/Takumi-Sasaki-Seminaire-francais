@@ -235,6 +235,46 @@ header {
   color: #212121;
 }
 
+/* フローチャート全体 */
+.flow-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* 各ステップ（バブル＋矢印） */
+.flow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ステップの丸いバブル */
+.flow-bubble {
+  background-color: #f8f9fa; /* 羊皮紙風の明るい背景 */
+  border: 1px solid #e0e0e0;
+  border-radius: 50px; /* 丸みを帯びた形 */
+  padding: 0.8rem 1.5rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #212121;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.flow-bubble:hover {
+  transform: translateY(-2px);
+}
+
+/* 矢印 */
+.flow-arrow {
+  color: #1565c0; /* 明るい青 */
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
 /* ゼミ年代記（タイムライン） */
 .timeline {
   position: relative;
