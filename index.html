@@ -119,12 +119,13 @@
   </div>
 </section>
 
-  <!-- Entrance exam -->
+<!-- Entrance exam -->
 <section id="entrance" class="section">
   <div class="container">
     <h2 class="section-title">Entrance exam</h2>
     <p class="section-subtitle">入室試験の流れ</p>
     <div class="section-text">
+      <!-- テキスト部分はそのまま（必要なら消してもOK） -->
       <p>経営学部アンケート提出</p>
       <p>　↓</p>
       <p>ES提出</p>
@@ -132,9 +133,24 @@
       <p>面接</p>
       <p>　↓</p>
       <p>入室</p>
-      <!-- ここに後でフローチャート風のグラフを入れる -->
+
+      <!-- フローチャート部分 -->
       <div class="flow-chart">
-        <!-- 後でCSSで見た目を作る -->
+        <div class="flow-step">
+          <div class="flow-bubble">経営学部アンケート提出</div>
+          <div class="flow-arrow">↓</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-bubble">ES提出</div>
+          <div class="flow-arrow">↓</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-bubble">面接</div>
+          <div class="flow-arrow">↓</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-bubble">入室</div>
+        </div>
       </div>
     </div>
   </div>
