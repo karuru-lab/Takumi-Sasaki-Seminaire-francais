@@ -274,24 +274,23 @@ header {
 /* スマホ対応 */
 @media (max-width: 768px) {
   .header-container {
-    padding: 0.5rem 1rem; /* スマホでも余白を減らす */
+    padding: 0.5rem 1rem;
   }
   .logo img {
-    height: 60px; /* スマホでは少し小さめ */
+    height: 60px;
     width: auto;
   }
-}
 
   /* ハンバーガーメニュー表示 */
   .hamburger {
     display: flex;
   }
 
-  /* ナビゲーションメニュー（スマホ） */
+ /* ナビゲーションメニュー（スマホ） */
   .nav-menu {
     position: fixed;
     top: 70px;
-    right: -100%; /* 画面外に隠す */
+    right: -100%;
     width: 100%;
     height: calc(100vh - 70px);
     background-color: #fff;
@@ -303,7 +302,7 @@ header {
   }
 
   .nav-menu.active {
-    right: 0; /* クリックでスライドイン */
+    right: 0;
   }
 
   .nav-menu ul {
@@ -316,14 +315,15 @@ header {
     padding: 1rem;
   }
 
-  /* ヒーローセクション調整 */
+
+ /* ヒーローセクション調整 */
   .hero-title {
-    font-size: 2rem; /* スマホでは少し小さく */
+    font-size: 2rem;
   }
 
   /* セクション共通調整 */
   .section {
-    padding: 3rem 0; /* スマホでは上下の余白を少し減らす */
+    padding: 3rem 0;
   }
 
   .section-title {
@@ -336,7 +336,7 @@ header {
 
   /* タイムライン調整 */
   .timeline::before {
-    left: 20px; /* 中央線を左寄せ */
+    left: 20px;
   }
 
   .timeline-item:nth-child(odd) .timeline-content,
@@ -345,18 +345,22 @@ header {
     margin-right: 0;
     padding-left: 2rem;
     padding-right: 0;
-    text-align: left; /* スマホではすべて左揃え */
+    text-align: left;
   }
-}
+}  /* ← メディアクエリの終わり（ここだけ） */
 
 /* フッター */
 .footer {
-  background-color: #0055A4; /* フランスの青 */
+  background-color: #0055A4;
   color: #fff;
   text-align: center;
   padding: 1.5rem 0;
 }
 
+.footer-text {
+  font-size: 0.9rem;
+  margin: 0;
+}
 .footer-text {
   font-size: 0.9rem;
   margin: 0;
