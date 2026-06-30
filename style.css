@@ -207,6 +207,14 @@ header {
 }
 
 @media (max-width: 768px) {
+  .hero.flag-bg .hero-title {
+    font-size: 2rem;
+  }
+  .hero.flag-bg .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  /* 白い板を少し薄くする */
   .hero.flag-bg::after {
     content: '';
     position: absolute;
@@ -214,9 +222,24 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.2); /* 0.5 → 0.2 */
     pointer-events: none;
     z-index: 1;
+  }
+
+  /* 文字の影を少し強くして、背景との差をはっきりさせる */
+  .hero.flag-bg .hero-title,
+  .hero.flag-bg .hero-subtitle,
+  .hero.flag-bg .hero-btn {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); /* 0.4 → 0.6 */
+  }
+
+  /* 縁取りは消す（見やすさ重視） */
+  .hero.flag-bg .hero-title,
+  .hero.flag-bg .hero-subtitle {
+    -webkit-text-stroke: 0px #fff; /* 0.3px → 0px（消す） */
+    text-stroke: 0px #fff;
+    /* paint-order は不要になるので削除してもよい */
   }
 }
 /* セクション共通（About us, Our principals, Our professor, Our explore, Entrance exam, Seminar history, Contact us） */
