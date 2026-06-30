@@ -27,9 +27,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const targetId = this.getAttribute('href');
     const targetElement = document.querySelector(targetId);
     if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+      const header = document.querySelector('header');
+      const headerHeight = header.offsetHeight;
+      const targetPosition = targetElement.offsetTop - headerHeight;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
       });
     }
   }
