@@ -16,28 +16,26 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // スムーズスクロール（ページ内リンク＋Heroボタン用）
-  function smoothScrollToTarget(e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href');
-    const targetElement = document.querySelector(targetId);
-    if (targetElement) {
-      const offsetTop = targetElement.offsetTop - 70; // ヘッダー分オフセット
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      });
-    }
+// スムーズスクロール（ページ内リンク＋Heroボタン用）
+function smoothScrollToTarget(e) {
+  e.preventDefault();
+  const targetId = this.getAttribute('href');
+  const targetElement = document.querySelector(targetId);
+  if (targetElement) {
+    targetElement.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start' // ターゲット要素の上端に合わせる
+    });
   }
+}
 
-  // ページ内リンク（#から始まるリンク）に適用
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', smoothScrollToTarget);
-  });
-
-  // HeroセクションのAbout usボタンにも適用（もし別クラスならこちら）
-  const heroBtn = document.querySelector('.hero-btn');
-  if (heroBtn) {
-    heroBtn.addEventListener('click', smoothScrollToTarget);
-  }
+// ページ内リンク（#から始まるリンク）に適用
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', smoothScrollToTarget);
 });
+
+// HeroセクションのAbout usボタンにも適用（もし別クラスならこちら）
+const heroBtn = document.querySelector('.hero-btn');
+if (heroBtn) {
+  heroBtn.addEventListener('click', smoothScrollToTarget);
+}
