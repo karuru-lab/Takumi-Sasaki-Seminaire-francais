@@ -10,5 +10,23 @@ document.addEventListener('DOMContentLoaded', function() {
     navMenu.classList.toggle('active');
   });
 
-  // 以下略
+ function smoothScrollToTarget(e) {
+  e.preventDefault();
+  const targetId = this.getAttribute('href');
+  const targetElement = document.querySelector(targetId);
+  if (targetElement) {
+    const header = document.querySelector('header');
+    const headerHeight = header.offsetHeight;
+    const targetPosition = targetElement.offsetTop - headerHeight;
+
+    console.log('headerHeight:', headerHeight);
+    console.log('targetElement.offsetTop:', targetElement.offsetTop);
+    console.log('targetPosition:', targetPosition);
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth'
+    });
+  }
+}
 });
